@@ -1,8 +1,7 @@
-(function() {
-
 class Board {
-	constructor() {
+	constructor(id) {
 		this.board_ = [['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']];
+		this.id_ = id;
 	}
 
 	reset() {
@@ -47,6 +46,10 @@ class Board {
 		});
 	}
 
+	setActive(opacity) {
+		document.getElementById(this.id_).style.opacity = opacity ? 1 : 0.3;
+	}
+
 	isEmpty_(x, y) {
 		if (x < 0 || x > 2 || y < 0 || y > 2) {
 			return false;
@@ -55,7 +58,7 @@ class Board {
 	}
 
 	update_() {
-		const table = document.getElementById('game');
+		const table = document.getElementById(this.id_);
 		if (table == null) return;
 		const cells = table.getElementsByTagName('td');
 		if (cells.length != 9) {
@@ -71,11 +74,3 @@ class Board {
 		}
 	}
 }
-
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-	module.exports = Board;
-} else {
-	window.Board = Board;
-}
-
-})();

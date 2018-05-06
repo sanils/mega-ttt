@@ -14,9 +14,9 @@ body {
 
 table { border-collapse:collapse; position:relative; }
 
-td { 
-  width:170px; 
-  height:170px; 
+#game td { 
+  width:270px; 
+  height:270px; 
   border:0px solid #777;
   border-right-width:6px;
   border-bottom-width:6px;
@@ -27,8 +27,27 @@ td {
   color:#888;
 }
 
-td:nth-child(3) { border-right-width:0px; }
-tr:last-child td { border-bottom-width:0px; }
+#game td:nth-child(3) { border-right-width:0px; }
+#lgame0 tr:last-child td, #lgame1 tr:last-child td, #lgame2 tr:last-child td, #lgame3 tr:last-child td, #lgame4 tr:last-child td, #lgame5 tr:last-child td, #lgame6 tr:last-child td, #lgame7 tr:last-child td, #lgame8 tr:last-child td { 
+  border-bottom-width:0px;
+}
+
+#lgame0 td, #lgame1 td, #lgame2 td, #lgame3 td, #lgame4 td, #lgame5 td, #lgame6 td, #lgame7 td, #lgame8 td { 
+  width:80px; 
+  height:80px; 
+  border:0px solid #333;
+  border-right-width:3px;
+  border-bottom-width:3px;
+  text-align:center;
+  font-size:40px;
+  cursor:pointer;
+  position:relative;
+  color:#888;
+}
+
+#lgame0, #lgame1, #lgame2, #lgame3, #lgame4, #lgame5, #lgame6, #lgame7, #lgame8 { 
+  margin:5px auto;
+}
 
 #restart {
   display:inline-block;
