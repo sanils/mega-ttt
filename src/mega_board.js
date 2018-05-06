@@ -57,9 +57,8 @@ class MegaBoard {
 	updateActive_() {
 		for (let r = 0; r < this.board_.length; r++) {
 			for (let c = 0; c < this.board_[r].length; c++) {
-				if (!this.board_[r][c].isGameOver()) {
-					this.board_[r][c].setActive(true);	
-				}
+				const gameOver = this.board_[r][c].isGameOver();
+				this.board_[r][c].setActive(!gameOver);
 			}
 		}
 		if (this.lastX_ == -1 && this.lastY_ == -1) {
